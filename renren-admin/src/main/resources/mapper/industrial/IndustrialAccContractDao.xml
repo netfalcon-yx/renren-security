@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.industrial.dao.IndustrialAccContractDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.industrial.entity.IndustrialAccContractEntity" id="industrialAccContractMap">
+        <result property="contractId" column="contract_id"/>
+        <result property="empId" column="emp_id"/>
+        <result property="contractCount" column="contract_count"/>
+        <result property="contractType" column="contract_type"/>
+        <result property="contractStart" column="contract_start"/>
+        <result property="contractEnd" column="contract_end"/>
+        <result property="contractDate" column="contract_date"/>
+        <result property="contractOperator" column="contract_operator"/>
+        <result property="contractPic" column="contract_pic"/>
+        <result property="remark" column="remark"/>
+    </resultMap>
+
+
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.industrial.dao.IndustrialAccEmpDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.industrial.entity.IndustrialAccEmpEntity" id="industrialAccEmpMap">
+        <result property="empId" column="emp_id"/>
+        <result property="empName" column="emp_name"/>
+        <result property="empSex" column="emp_sex"/>
+        <result property="empBirthday" column="emp_Birthday"/>
+        <result property="empEdu" column="emp_edu"/>
+        <result property="empPolitics" column="emp_politics"/>
+        <result property="empCertificateNumber" column="emp_certificate_number"/>
+        <result property="empRegistered" column="emp_Registered"/>
+        <result property="empMob" column="emp_mob"/>
+        <result property="empTel" column="emp_tel"/>
+        <result property="empAdd" column="emp_add"/>
+        <result property="empEmergencyContact" column="emp_emergency_contact"/>
+        <result property="empEmergencyTel" column="emp_emergency_tel"/>
+        <result property="remark" column="remark"/>
+        <result property="empCertificatePic" column="emp_certificate_pic"/>
+    </resultMap>
+
+
+</mapper>

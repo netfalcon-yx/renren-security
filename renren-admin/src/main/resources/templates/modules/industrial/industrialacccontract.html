@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>合同信息</title>
+		<#include "/header.html">
+</head>
+<body>
+<div id="rrapp" v-cloak>
+    <div v-show="showList">
+        <div class="grid-btn">
+			<#if shiro.hasPermission("industrial:industrialacccontract:save")>
+            <a class="btn btn-primary" @click="add"><i class="fa fa-plus"></i>&nbsp;新增</a>
+			</#if>
+			<#if shiro.hasPermission("industrial:industrialacccontract:update")>
+            <a class="btn btn-primary" @click="update"><i class="fa fa-pencil-square-o"></i>&nbsp;修改</a>
+			</#if>
+			<#if shiro.hasPermission("industrial:industrialacccontract:delete")>
+            <a class="btn btn-primary" @click="del"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+			</#if>
+        </div>
+        <table id="jqGrid"></table>
+        <div id="jqGridPager"></div>
+    </div>
+
+    <div v-show="!showList" class="panel panel-default">
+        <div class="panel-heading">{{title}}</div>
+        <form class="form-horizontal">
+														                    <div class="form-group">
+                        <div class="col-sm-2 control-label">员工编号</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="industrialAccContract.empId" placeholder="员工编号"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">合同计数</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="industrialAccContract.contractCount" placeholder="合同计数"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">合同类型</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="industrialAccContract.contractType" placeholder="合同类型"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">合同起始时间</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="industrialAccContract.contractStart" placeholder="合同起始时间"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">合同截止时间</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="industrialAccContract.contractEnd" placeholder="合同截止时间"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">合同签订时间</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="industrialAccContract.contractDate" placeholder="合同签订时间"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">经办人</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="industrialAccContract.contractOperator" placeholder="经办人"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">合同文本</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="industrialAccContract.contractPic" placeholder="合同文本"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">备注</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="industrialAccContract.remark" placeholder="备注"/>
+                        </div>
+                    </div>
+							            <div class="form-group">
+                <div class="col-sm-2 control-label"></div>
+                <input type="button" class="btn btn-primary" @click="saveOrUpdate" value="确定"/>
+                &nbsp;&nbsp;<input type="button" class="btn btn-warning" @click="reload" value="返回"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="${request.contextPath}/statics/js/modules/industrial/industrialacccontract.js?_${.now?long}"></script>
+</body>
+</html>

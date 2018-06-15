@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.industrial.dao.IndustrialHouseLeaseDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.industrial.entity.IndustrialHouseLeaseEntity" id="industrialHouseLeaseMap">
+        <result property="houseId" column="house_id"/>
+        <result property="partitionname" column="partitionName"/>
+        <result property="placesname" column="placesName"/>
+        <result property="buildingname" column="buildingName"/>
+        <result property="unitname" column="unitName"/>
+        <result property="roomnumber" column="roomNumber"/>
+        <result property="rent" column="rent"/>
+        <result property="expiredate" column="expireDate"/>
+        <result property="picpath" column="picPath"/>
+        <result property="remark" column="remark"/>
+    </resultMap>
+
+
+</mapper>
