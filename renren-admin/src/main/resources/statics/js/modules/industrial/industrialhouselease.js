@@ -45,7 +45,7 @@ var vm = new Vue({
 	el:'#rrapp',
 	data:{
         q:{
-            partitionname: null
+            placesname: null
         },
 		showList: true,
 		title: null,
@@ -112,17 +112,17 @@ var vm = new Vue({
 				});
 			});
 		},
-		/*
+
 		getInfo: function(houseId){
 			$.get(baseURL + "industrial/industrialhouselease/info/"+houseId, function(r){
                 vm.industrialHouseLease = r.industrialHouseLease;
             });
-		},*/
+		},
 		reload: function (event) {
 			vm.showList = true;
 			var page = $("#jqGrid").jqGrid('getGridParam','page');
 			$("#jqGrid").jqGrid('setGridParam',{
-                postData:{'partitionname': vm.q.partitionname},
+                postData:{'placesname': vm.q.placesname},
                 page:page
             }).trigger("reloadGrid");
 		}

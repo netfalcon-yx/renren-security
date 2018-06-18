@@ -2,6 +2,8 @@ package io.renren.modules.industrial.entity;
 
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.io.Serializable;
@@ -153,6 +155,8 @@ public class IndustrialHouseLeaseEntity implements Serializable {
 	/**
 	 * 获取：租期
 	 */
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	public Date getExpiredate() {
 		return expiredate;
 	}

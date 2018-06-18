@@ -1,5 +1,6 @@
 package io.renren.modules.industrial.service.impl;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import java.util.Map;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
@@ -18,9 +19,12 @@ public class IndustrialHouseLeaseServiceImpl extends ServiceImpl<IndustrialHouse
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
+        String placesname = (String)params.get("placesname");
+
         Page<IndustrialHouseLeaseEntity> page = this.selectPage(
                 new Query<IndustrialHouseLeaseEntity>(params).getPage(),
                 new EntityWrapper<IndustrialHouseLeaseEntity>()
+                        .like(StringUtils.isNotBlank(placesname),"placesname", placesname)
         );
 
         return new PageUtils(page);
